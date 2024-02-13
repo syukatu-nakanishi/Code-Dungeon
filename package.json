@@ -1,0 +1,57 @@
+{
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "@electron/rebuild": "^3.5.0",
+    "@types/moo": "^0.5.9",
+    "@types/nearley": "^2.11.5",
+    "@types/node": "^20.10.6",
+    "@types/pixi.js": "^5.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "electron": "^28.2.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "Code Dungeon",
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "./dist",
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "scripts": {
+    "package": "electron-forge package",
+    "postinstall": "electron-builder install-app-deps",
+    "build_win": "electron-builder build -w",
+    "start": "electron-forge start",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "moo-ignore": "^2.5.3",
+    "nearley": "^2.20.1",
+    "nedb-promises": "^6.2.3",
+    "pixi.js": "^7.4.0"
+  },
+  "name": "code_dungeon",
+  "version": "0.0.1",
+  "main": "dist/main.bundle.js",
+  "description": "Desktop game",
+  "author": "Nakanishi"
+}

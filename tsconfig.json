@@ -1,0 +1,19 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    //"target": "es5",
+    "target": "ES2021",
+    //"target": "ESNext",
+    "module": "commonjs",
+    //"strict": true,
+    "outDir": "./dist"
+  },
+  "include": [
+	  "src/**/*.ts"
+  ],
+  "exclude": [
+	  "node_modules"
+  ]
+}
+

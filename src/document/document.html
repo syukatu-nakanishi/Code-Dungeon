@@ -1,0 +1,147 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Dungeon</title>
+</head>
+<body>
+    <button id="backButton" class="button">戻る</button>
+    <!-- <h1>Typo</h1> -->
+    <h2>コメント</h2>
+    <p>
+        <pre>
+            <code>
+                // 行末までコメント
+            </code>
+        </pre>
+    </p>
+    <h2>変数</h2>
+    <p>
+        変数宣言は型注釈が無いとエラー．
+        <pre>
+            <code>
+                let x: number;       // 数値型
+                let y: boolean;      // 真偽値型
+                let z: number = x + 0;   // 宣言と同時に初期化
+            </code>
+        </pre>
+    </p>
+    <h2>演算子</h2>
+    <p>
+        <pre>
+            <code>
+                x = 1 + 1;  // xに2が代入される
+                y = 1 - 1;  // xに0が代入される
+                z = 2 * 3;  // xに6が代入される
+                u = 6 / 2;  // xに1.5が代入される
+                v = 4 % 3;  // xに1が代入される
+            </code>
+        </pre>
+    </p>
+    <p>
+        <pre>
+            <code>
+                1 < 2;   // true
+                1 <= 2;  // true
+                1 > 2;   // false
+                1 >= 2;  // false
+                1 == 2;  // false
+                1 != 2;  // true
+                !false;  // true
+                true || false // true
+                true && false // false
+            </code>
+        </pre>
+    </p>
+    <h2>if文</h2>
+    <p>
+        <pre>
+            <code>
+                let x: number = 8;
+                if (x > 10) {
+                    x = 0;
+                } else if (x > 5) {
+                    x = 1;
+                } else {
+                    x = 2;
+                }
+            </code>
+        </pre>
+    </p>
+    <h2>while文</h2>
+    <p>
+        <pre>
+            <code>
+                let x: boolean = true;
+                while(x) {
+                    x = false;
+                }
+            </code>
+        </pre>
+    </p>
+    <h2>for文</h2>
+    <p>
+        <pre>
+            <code>
+                let sum: number = 0;
+                let i: number = 1;
+                for(let i: number = 1; i <= 10; i = i + 1) {
+                    sum = sum + i;
+                }
+            </code>
+        </pre>
+    </p>
+    <h2>関数</h2>
+    <p>
+        関数の定義でも入力と出力に型注釈が無いとエラー．
+        関数は定義するより前に使うことが出来る．
+        <pre>
+            <code>
+                myfunc(10);
+
+                function myfunc(i: number): number {
+                    return i+1;
+                }
+            </code>
+        </pre>
+    </p>
+    <h2>move(&theta;: number): number</h2>
+    <p>
+        <pre>
+            <code>
+                move(45); // 45度方向にキャラクターが10px移動
+            </code>
+        </pre>
+    </p>
+    <h2>fire(&theta;: number): number</h2>
+    <p>
+        <pre>
+            <code>
+                fire(45); // 45度方向に火の玉を発射
+            </code>
+        </pre>
+    </p>
+    <h2>random(): number</h2>
+    <p>
+        <pre>
+            <code>
+                random(); // 0以上1未満の疑似乱数を生成
+            </code>
+        </pre>
+    </p>
+    <h2>fork(): boolean</h2>
+    <p>
+        <pre>
+            <code>
+                fork(); // キャラクターが分裂する
+                        // trueが返る
+            </code>
+        </pre>
+    </p>
+    <script src="document.bundle.js"></script>
+</body>
+</html>
+
+

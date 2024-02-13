@@ -1,0 +1,138 @@
+html, body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+#container {
+    display: flex;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+#controler {
+    width: 228.57vw;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    */
+    margin: 0;
+    border: none;
+    padding: 0;
+    color: white;
+}
+
+.button {
+    cursor: pointer;
+    width: 6vw;
+    height: 6vw;
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    text-align: center;
+    margin: auto;
+}
+
+.buttons {
+    margin: auto;
+    text-align: center;
+}
+
+#fileButton {
+    background-image: url(../../dist/file_add.png); 
+    margin-right: 2vw;
+}
+
+#startButton {
+    background-image: url(../../dist/start.png);
+    margin-left: 2vw;
+}
+
+h1 {
+    font-size: 4vw;
+    color: white;
+    text-align: center;
+}
+
+#backButton {
+    width: 10vw;
+    height: 5vw;
+    color: white;
+    background-color: orange;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    border-radius: 100vh;
+    /* border-width: 0; */
+    border: none;
+    cursor: pointer;
+    margin: 2vw;
+}
+
+#resignButton {
+    width: 10vw;
+    height: 5vw;
+    color: white;
+    background-color: orange;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    border-radius: 100vh;
+    /* border-width: 0; */
+    border: none;
+    cursor: pointer;
+    margin: 2vw;
+}
+
+#fileInput {
+    display: none;
+}
+
+#fileName {
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4vw;
+    background-color: #fff;
+    z-index: 1000;
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#closure {
+    cursor: pointer;
+    position: absolute;
+    font-size: 2vw;
+    top: 1vw;
+    right: 1vw;
+}
+
+.modalText {
+    font-size: 5vw;
+    font-weight: bold;
+}

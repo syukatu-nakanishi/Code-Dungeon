@@ -1,0 +1,145 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Dungeon</title>
+</head>
+<body>
+    <button id="backButton" class="button">戻る</button>
+    <div id="textContainer">
+        <div id="page1" class="page active">
+            <h1>遊び方</h1>
+            <p>
+                Code DungeonはTypeScriptライクなプログラミング言語 "Typo" を使って
+                キャラクターの動きをプログラミングして，迷路を解くゲームです．
+            </p>
+            <p>
+                Typoは変数（数値型とブール型）・制御文・関数呼び出しなどの
+                手続き型言語の基本的な機能を持ちます．（配列とオブジェクト指向の機能は実装中です）．
+                これとゲーム用の組み込み関数を使ってキャラクターの動きをプログラミングします．
+            </p>
+            <div class="buttons">
+                <button id="nextButton1" class="button">Next</button>
+            </div>
+        </div>
+        <div id="page2" class="page">
+            <div class="buttons">
+                <button id="backButton2" class="button">Back</button>
+                <button id="nextButton2" class="button">Next</button>
+            </div>
+            <h1>サンプルプログラム１</h1>
+            <p>
+                <pre>
+                    <code>
+                    while(true) {
+                        move(45); // 45度方向に10px移動
+                    }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                このプログラムを実行するとキャラクターは45度方向に移動し続けます．
+                move(&theta;)関数は角度&theta;方向に10px移動する組み込み関数です．
+                move(45)を無限ループで呼び出し続けるため，キャラクターは45度方向に移動し続けます．
+            </p>
+            <p>
+            試しにこのコードを実行してみてください．
+            このコードを.typo拡張子でテキストファイルに保存して，
+            左のファイルボタンから選択して中央の実行ボタンを押すと実行できます．
+            </p>
+        </div>
+        <div id="page3" class="page">
+            <div class="buttons">
+                <button id="backButton3" class="button">Back</button>
+                <button id="nextButton3" class="button">Next</button>
+            </div>
+            <h1>サンプルプログラム2</h1>
+            <p>
+                <pre>
+                    <code>
+                    let theta: number = 0;
+                    while(true) {
+                        fire(theta); // theta方向に火の玉を発射
+                        theta = theta + 30;
+                    }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                このプログラムを実行するとキャラクターは反時計回りに火の玉を発射し続けます．
+            </p>
+            <p>
+                1行目は数値型の変数thetaの宣言と初期値の代入をしています．
+                数値型であることを明示するために，型注釈を入れています．
+                Typoでは，変数宣言の際に型注釈を入れないとエラーになるので注意してください．
+            </p>
+            <p>
+                3行目のfire(&theta;)関数は，角度&theta;方向に火の玉を発射する組み込み関数です．
+                一度のループでthetaに30を加えているため，30度ごとに火の玉を発射します．
+            </p>
+        </div>
+        <div id="page4" class="page">
+            <div class="buttons">
+                <button id="backButton4" class="button">Back</button>
+                <button id="nextButton4" class="button">Next</button>
+            </div>
+            <h1>サンプルプログラム3</h1>
+            <p>
+                <pre>
+                    <code>
+                        let i: number = 0;
+                        while (true) {
+                            if (i % 30 == 0) {
+                                fork(); // キャラクターの分裂
+                            }
+                            move(random()*360); // ランダムな方向へ進む
+                            i = i + 1;
+                        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                このプログラムを実行するとキャラクターは分裂を繰り返します．
+            </p>
+            <p>
+                4行目のfork()関数は，キャラクターを分裂させる組み込み関数です．
+                分裂してできるキャラクターの変数の値やプログラムの実行位置は元のキャラクターと同じです．
+                つまりi=45でfork()関数が実行された場合，分裂してできるキャラクターもi=45であり，
+                fork()関数の次の行（5行目）から実行されます．
+            </p>
+            <p>
+                6行目のrandom()関数は，0以上1未満の疑似乱数を生成する組み込み関数です．
+                つまり6行目では0度以上360度未満のランダムな方向に進みます．
+            </p>
+        </div>
+        <div id="page5" class="page">
+            <div class="buttons">
+                <button id="backButton5" class="button">Back</button>
+            </div>
+            <h1>実装中の機能</h1>
+            <ul id="list">
+                <li>配列，オブジェクト指向の実装</li>
+                <li>&theta;方向のオブジェクトの距離と種類を得るsensor(&theta;)関数，分裂体間で共有できる変数</li>
+                <li>本編</li>
+            </ul>
+        </div>
+    </div>
+    <div id="gameScreen">
+        <div id="ctrContainer">
+            <div class="buttons">
+                <input id="fileInput" type="file" accept=".typo">
+                <button id="fileButton" class="imageButton"></button>
+                <button id="startButton" class="imageButton"></button>
+                <button id="resetButton2" class="imageButton resetButton"></button>
+                <button id="resetButton3" class="imageButton resetButton"></button>
+                <button id="resetButton4" class="imageButton resetButton"></button>
+            </div>
+            <div id="fileName" class="fileName"></div>
+        </div>
+    </div>
+  <script src="howToPlay.bundle.js"></script>
+</body>
+</html>
+
